@@ -5,5 +5,23 @@
     "graphql": "^15.5.0",
     "mongoose": "^5.12.3",
     "node.js": "^0.0.1-security"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "sssf-project",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omnimble/sssf-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omnimble/sssf-project/issues"
+  },
+  "homepage": "https://github.com/Omnimble/sssf-project#readme"
 }
