@@ -1,39 +1,18 @@
-const itemData = [
-    {
-       id: '1',
-       itemName: 'Sire Pet',
-       category: '1',
-    },
- ];
+import Item from '../models/itemModel.js';
  
- const categoryData = [
-    {
-       id: '1',
-       categoryName: 'Bosses',
-    },
-    {
-        id: '2',
-        categoryName: 'Raids',
-     },
-     {
-        id: '3',
-        categoryName: 'Clues',
-     },
-     {
-        id: '4',
-        categoryName: 'Minigames',
-     },
-     {
-        id: '5',
-        categoryName: 'Other',
-     },
- ];
- 
- export default {
-    Query: {
-       animals: (parent, args) => {
-        return itemData;
-       },
-    },
+export default {
+   Query: {
+     items: () => Item.find({})
+   },
+   Mutation: {
+     modifyItem: async (_, args, context) => {
+       try {
+         const { id, name, activity, obtained } = args;
+         const updatedItem = await Item.findByIdAndUpdate(id, { name, activity, obtained }, { new: true });
+         return updatedItem.save();
+       } catch (error) {
+         throw new UserInputError(`Error while updating the item: ${error.message}`);
+       }
+     }
+   }
  };
- 
