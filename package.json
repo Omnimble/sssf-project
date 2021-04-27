@@ -7,7 +7,7 @@
         "graphql": "^15.5.0",
         "heroku": "^7.52.0",
         "mongoose": "^5.12.3",
-        "node.js": "^14.16.0"
+        "node.js": "^0.0.1-security"
     },
     "scripts": {
         "start": "node server.js"
