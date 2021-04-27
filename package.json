@@ -1,6 +1,7 @@
 {
     "type": "module",
     "dependencies": {
+        "@heroku-cli/plugin-buildpacks": "^7.47.13",
         "apollo-server-express": "^2.22.2",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
