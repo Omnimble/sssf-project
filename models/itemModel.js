@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
-    itemName: String,
+    name: String,
     obtained: Boolean,
     quantity: Number,
     activity: [mongoose.Types.ObjectId]

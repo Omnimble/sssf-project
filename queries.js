@@ -8,3 +8,5 @@ const getItemNames = gql `
     }
   }
   `;
+
+export default getItemNames;

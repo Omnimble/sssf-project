@@ -7,7 +7,7 @@ export default gql `
    
    type Item {
       id: ID
-      itemName: String
+      name: String
       activity: Activity
       obtained: Boolean
       quantity: Int
