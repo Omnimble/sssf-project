@@ -4,6 +4,7 @@ import resolvers from './resolvers/index.js';
 import express from 'express';
 import connectMongo from './db.js';
 import 'dotenv/config.js';
+const PORT = process.env.PORT || 3000;
 
 (async() => {
     try {
@@ -19,9 +20,9 @@ import 'dotenv/config.js';
         server.applyMiddleware({ app });
 
         app.use(express.static('public'));
-        app.listen({ port: 80 }, () =>
+        app.listen({ port: PORT }, () =>
             console.log(
-                `🚀 Server ready at http://localhost:3000${server.graphqlPath}`),
+                `🚀 App is running on port ${PORT}`),
         );
     } catch (e) {
         console.log('server error: ' + e.message);
