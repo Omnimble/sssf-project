@@ -1,7 +1,6 @@
 const activities = document.getElementsByClassName('modal');
 
-// Not sure about this uri
-fetch('collection-log.herokuapp.com/graphql', {
+fetch('https://collection-log.herokuapp.com/graphql', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
