@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 3000;
         const server = new ApolloServer({
             typeDefs: schemas,
             resolvers,
-        });
+            introspection: true,
+            playground: true,
+        }); // Dont enable playground in production
 
         const app = express();
 
