@@ -1,10 +1,12 @@
 import { gql } from 'apollo-server-express';
 
-const getItemNames = gql `
-{
+const modifyItem = gql `
+mutation {
     items {
       id
       itemName
+      obtained
+      quantity
     }
   }
   `;
