@@ -7,6 +7,10 @@ Database hosted on MongoDB Atlas
 
 ## Example queries and mutations
 
+(GraphQL endpoint: https://collection-log.herokuapp.com/graphql)
+
+
+
 Get all items
 
 ```
