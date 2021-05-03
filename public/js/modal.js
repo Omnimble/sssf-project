@@ -1,3 +1,4 @@
+"use strict";
 const activities = document.getElementsByClassName('modal');
 
 fetch('https://collection-log.herokuapp.com/graphql', {
@@ -24,18 +25,18 @@ fetch('https://collection-log.herokuapp.com/graphql', {
     .then(data => {
         console.log(data.data);
         for (let i = 0; i < activities.length; i++) {
-            var nameFilter = activities[i].previousElementSibling.getAttribute("name");
-            var filteredArray = data.data.items.filter(function(el) {
+            let nameFilter = activities[i].previousElementSibling.getAttribute("name");
+            let filteredArray = data.data.items.filter(function(el) {
                 return el.activity.activityName == nameFilter;
             });
-            console.log(filteredArray);
 
-            var div1 = document.createElement("DIV"); // Create a <div> node
+            // Create elements for each activity
+            let div1 = document.createElement("DIV");
             div1.className = "modal-content black";
-            var span1 = document.createElement("DIV"); // Create a <span> node
+            let span1 = document.createElement("DIV");
             span1.className = "close";
             span1.innerHTML = "&times;";
-            var div2 = document.createElement("DIV"); // Create another <div> node
+            let div2 = document.createElement("DIV");
             div2.className = "name";
             div2.innerHTML = nameFilter;
 
@@ -47,9 +48,9 @@ fetch('https://collection-log.herokuapp.com/graphql', {
                 activities[i].style.display = "none";
             }
 
-            var div3 = document.createElement("DIV"); // Create a <div> node
+            let div3 = document.createElement("DIV");
             div3.className = "row-padding dark-grey padding-64 container";
-            var div4 = document.createElement("DIV"); // Create a <div> node
+            let div4 = document.createElement("DIV");
             div4.className = "row items-list";
 
             div1.appendChild(div3);
@@ -57,31 +58,32 @@ fetch('https://collection-log.herokuapp.com/graphql', {
 
 
             for (let i = 0; i < filteredArray.length; i++) {
-                var name = filteredArray[i].name;
-                var obtained = filteredArray[i].obtained;
-                var quantity = filteredArray[i].quantity;
+                let name = filteredArray[i].name;
+                let obtained = filteredArray[i].obtained;
+                let quantity = filteredArray[i].quantity;
 
-                var a1 = document.createElement("A"); // Create a <a> node
+                // Create elements to hold item information
+                let a1 = document.createElement("A");
                 a1.className = "item col";
 
-                var btn1 = document.createElement("BUTTON"); // Create a <button> node
+                let btn1 = document.createElement("BUTTON");
                 btn1.className = "item-container";
 
-                var nameDiv = document.createElement("A"); // Create a <a> node
+                let nameDiv = document.createElement("A");
                 nameDiv.className = "item-info";
                 nameDiv.innerHTML = name;
 
-                var quantityDiv = document.createElement("A"); // Create a <a> node
+                let quantityDiv = document.createElement("A");
                 quantityDiv.className = "item-info";
                 quantityDiv.innerHTML = "Quantity: " + quantity;
 
-                var span2 = document.createElement("A"); // Create a <span> node
+                let span2 = document.createElement("A");
                 span2.className = "item";
 
-                var span3 = document.createElement("A"); // Create a <span> node
+                let span3 = document.createElement("A");
                 span3.className = "item";
 
-                var span4 = document.createElement("A"); // Create a <span> node
+                let span4 = document.createElement("A");
                 span4.className = "item";
 
                 div4.appendChild(a1);
