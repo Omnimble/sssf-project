@@ -12,7 +12,7 @@ let loadData = () => {
     }
 
 
-    fetch('http://localhost:3000/graphql', {
+    fetch('https://collection-log.herokuapp.com/graphql', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
