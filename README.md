@@ -27,7 +27,7 @@ Modify an item
 
 ```
 mutation {
-   modifyItem(id:"60883144a2c5304a34351507", obtained: true, quantity:10) {
+   modifyItem(id: String, obtained: Boolean, quantity: Int) {
     id
     obtained
     quantity
@@ -39,7 +39,7 @@ Add an item
 
 ```
 mutation {
-  addItem(id:"60883144a2c5304a34351507", name: "Jar of Miasma", activity: "607410f6b231f4f0d9fa7f44", obtained:true, quantity:5) {
+  addItem(id: String, name: String, activity: String, obtained: Boolean, quantity: Int) {
     id
     name
     obtained
@@ -55,7 +55,7 @@ Delete an item
 
 ```
 mutation {
-  deleteItem(id:"6090175b03fbf43814a51804") {
+  deleteItem(id: String) {
     id
     name
     obtained
