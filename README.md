@@ -1,6 +1,7 @@
 # Collection Log App for Old School Runescape
 
-Running in heroku: https://collection-log.herokuapp.com/
+Deployed to heroku: https://collection-log.herokuapp.com/
+
 Database hosted on MongoDB Atlas
 
 
