@@ -92,13 +92,13 @@ fetch('https://collection-log.herokuapp.com/graphql', {
                 btn1.appendChild(nameDiv);
                 btn1.appendChild(quantityDiv);
 
-                nameDiv.appendChild(span2);
-                quantityDiv.appendChild(span4);
+                //nameDiv.appendChild(span2);
+                //quantityDiv.appendChild(span4);
 
                 if (obtained == 0) {
-                    btn1.style.backgroundColor = "red";
+                    btn1.style.backgroundColor = "#8b0000";
                 } else {
-                    btn1.style.backgroundColor = "green";
+                    btn1.style.backgroundColor = "#006400";
                 }
             }
         }

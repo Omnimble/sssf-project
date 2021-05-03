@@ -14,6 +14,8 @@ export default gql `
    }
 
    extend type Mutation {
-      modifyItem(id: ID, name: String, activity: ID, obtained: Boolean, quantity: Int): Item
+      addItem(id: ID, name: String, activity: String, obtained: Boolean, quantity: Int): Item
+      modifyItem(id: ID, obtained: Boolean, quantity: Int): Item
+      deleteItem(id: ID): Item
    }
 `;
