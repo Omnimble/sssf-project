@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Collection Log</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="./css/style.css" />
+
+<head>
+    <title>Collection Log</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/itemQuery.js"></script>
+</head>
 
 <body>
     <!-- Navbar -->
@@ -35,24 +39,35 @@
         </div>
 
         <!-- Header -->
-        <header class="w3-container w3-center" style="padding: 36px 16px">
-            <h1 class="w3-margin w3-jumbo">Home</h1>
+        <header class="container center" style="padding: 36px 16px">
+            <h1 class="margin jumbo">Home</h1>
         </header>
-        <a href="../activity/zulrah" class="item col">
-            <div class="item-container">
-                <div class="item-info">
-                    <span class="item"></span>
-                </div>
-            </div>
+        <div id="menu">
+            <a class="options left">To get started, load your stats to view them</a>
+            <a id="load" class="push_button red options" href="#">Load my stats</a>
+            <a class="options left">View other players collection logs (Not implemented)</a>
+            <a id="load2" class="push_button red options" href="#">Load stats by username</a>
+            <a class="options left">Import your collection log data from runescape here (Need a plugin for OSRS)</a>
+            <form class="options padding-large" action="#">
+                <input type="file" id="itemLog" name="collectionLog">
+                <input type="submit">
+            </form>
+        </div>
+
     </div>
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-        <div class="w3-xlarge w3-padding-32"></div>
+    <footer class="container padding-64 center opacity">
+        <div class="xlarge padding-32"></div>
         <p>OSRS project for SSSF-course</p>
     </footer>
 
-    <script></script>
+    <script>
+        let btn = document.getElementById('load');
+        btn.onclick = function() {
+            loadData();
+        }
+    </script>
 </body>
 
 </html>

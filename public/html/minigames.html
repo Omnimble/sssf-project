@@ -188,8 +188,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-        <div class="w3-xlarge w3-padding-32"></div>
+    <footer class="container padding-64 center opacity">
+        <div class="xlarge padding-32"></div>
         <p>OSRS project for SSSF-course</p>
     </footer>
     <script>
@@ -198,7 +198,13 @@
         var spans = document.getElementsByClassName("close");
         for (let i = 0; i < btns.length; i++) {
             btns[i].onclick = function() {
-                modals[i].style.display = "block";
+                let itemString = localStorage.getItem('items');
+                let itemJson = JSON.parse(itemString);
+                if (itemJson == undefined || itemJson == null) {
+                    window.alert("Go to homepage to load your stats first.")
+                } else {
+                    modals[i].style.display = "block";
+                }
             }
         }
         for (let i = 0; i < spans.length; i++) {

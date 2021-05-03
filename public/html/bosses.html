@@ -378,7 +378,13 @@
         var spans = document.getElementsByClassName("close");
         for (let i = 0; i < btns.length; i++) {
             btns[i].onclick = function() {
-                modals[i].style.display = "block";
+                let itemString = localStorage.getItem('items');
+                let itemJson = JSON.parse(itemString);
+                if (itemJson == undefined || itemJson == null) {
+                    window.alert("Go to homepage to load your stats first.")
+                } else {
+                    modals[i].style.display = "block";
+                }
             }
         }
         for (let i = 0; i < spans.length; i++) {

@@ -1,32 +1,13 @@
-"use strict";
-const activities = document.getElementsByClassName('modal');
+'use strict';
+window.onload = function() {
+    let activities = document.getElementsByClassName('modal');
 
-fetch('https://collection-log.herokuapp.com/graphql', {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            query: `
-            query {
-                items {
-                  id
-                  name
-                  obtained
-                  quantity
-                  activity {
-                    activityName
-                  }
-                }
-              }
-                          
-        `
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.data);
+    let itemString = localStorage.getItem('items');
+    let itemJson = JSON.parse(itemString);
+    if (itemJson != undefined && itemJson != null) {
         for (let i = 0; i < activities.length; i++) {
             let nameFilter = activities[i].previousElementSibling.getAttribute("name");
-            let filteredArray = data.data.items.filter(function(el) {
+            let filteredArray = itemJson.items.filter(function(el) {
                 return el.activity.activityName == nameFilter;
             });
 
@@ -62,12 +43,12 @@ fetch('https://collection-log.herokuapp.com/graphql', {
                 let obtained = filteredArray[i].obtained;
                 let quantity = filteredArray[i].quantity;
 
-                // Create elements to hold item information
+                // Create elements inside activities to hold item information
                 let a1 = document.createElement("A");
                 a1.className = "item col";
 
-                let btn1 = document.createElement("BUTTON");
-                btn1.className = "item-container";
+                let div5 = document.createElement("DIV");
+                div5.className = "item-container";
 
                 let nameDiv = document.createElement("A");
                 nameDiv.className = "item-info";
@@ -87,19 +68,19 @@ fetch('https://collection-log.herokuapp.com/graphql', {
                 span4.className = "item";
 
                 div4.appendChild(a1);
-                a1.appendChild(btn1);
+                a1.appendChild(div5);
 
-                btn1.appendChild(nameDiv);
-                btn1.appendChild(quantityDiv);
-
-                //nameDiv.appendChild(span2);
-                //quantityDiv.appendChild(span4);
+                div5.appendChild(nameDiv);
+                div5.appendChild(quantityDiv);
 
                 if (obtained == 0) {
-                    btn1.style.backgroundColor = "#8b0000";
+                    div5.style.backgroundColor = "#8b0000";
                 } else {
-                    btn1.style.backgroundColor = "#006400";
+                    div5.style.backgroundColor = "#006400";
                 }
             }
         }
-    });
+    }
+
+
+};
