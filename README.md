@@ -1,13 +1,15 @@
 # Collection Log App for Old School Runescape
 
-Deployed to heroku: https://collection-log.herokuapp.com/
-
+Keep track of what unique items you have collected in the game.
+To get your current items, it is required to manually pull the list from the game through an unofficial plugin.
 Database hosted on MongoDB Atlas
-
+Deployed to heroku: https://collection-log.herokuapp.com/
 
 ## Example queries and mutations
 
 (GraphQL endpoint: https://collection-log.herokuapp.com/graphql)
+(Note: You wouldn't want to add or remove items normally, because the items are fixed)
+
 
 
 
