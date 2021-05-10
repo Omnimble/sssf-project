@@ -1,7 +1,7 @@
 # Collection Log App for Old School Runescape
 
 Keep track of what unique items you have collected in the game.
-To get your current items, it is required to manually pull the list from the game through an unofficial plugin.
+To get your current items, it is required to manually pull the list from the game through an unofficial plugin. If I decide to work on this more, I'll create a new plugin which can keep your log up-to-date.
 
 Database hosted on MongoDB Atlas
 
